@@ -1,0 +1,57 @@
+/* pages/fexform/fexform.wxss */
+.fexbtnwarp{
+  padding: 10px;
+}
+.text-area{
+  border: 1px solid #ccc;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.upload-preview{
+    overflow: hidden;
+    width: 100%;
+    _zoom: 1;
+    margin-bottom: 20px;
+}
+.upload_append_list {
+    height: 100%;
+    margin: 1px;
+    float: left;
+    position: relative;
+}
+.upload-warpper{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #dfdfdf;
+    height: 115px;
+    width: 140px;
+}
+.upload-warp{
+    width: 125px;
+    max-width: 125px;
+    max-height: 105px;
+    margin: auto;
+    overflow: hidden;
+}
+.upload-img{
+    vertical-align: middle;
+    border: 0;
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    height: 105px;
+}
+.upload-btn{
+    display: block;
+    padding:3px 6px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    background: #26B8F2;
+    margin-bottom: 20px;
+}

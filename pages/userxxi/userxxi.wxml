@@ -1,0 +1,4 @@
+<!--pages/userxxi/userxxi.wxml-->
+<view class="xiaoxi-warp">
+消息富文本框--可以单发给某个用户--可以群发给所有人
+</view>

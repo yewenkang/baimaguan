@@ -1,0 +1,4 @@
+/* pages/userxxi/userxxi.wxss */
+.xiaoxi-warp{
+  padding: 10px;
+}

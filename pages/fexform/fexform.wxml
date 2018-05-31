@@ -1,0 +1,17 @@
+<!--pages/fexform/fexform.wxml-->
+<view class="fexbtnwarp">
+  <textarea class="text-area" maxlength="140" placeholder="这一刻的想法..."></textarea>
+  <view class="upload-preview">
+    <block wx:key='key'>
+      <view class="upload_append_list">
+        <view class="upload-warpper">
+          <view class="upload-warp">
+            <image class="upload-img" src='../image/huodong.png'></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="upload-btn">点击选择图片</view>
+  <view class="upload-btn">提交分享</view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/userfx/userfx.wxml-->
+
+<view class="fenxiang-warp">
+  <view class="fenxiang-title">分享标题</view>
+  <view class="fenxiang-ms">
+    <view class="fenxiang-md">点赞：11</view>
+    <view class="fenxiang-md">评论：11</view>
+    <view class="fenxiang-md">2018-05-02</view>
+  </view>
+  <view class="fenx-text">
+    文字和图片文字和图片文字和图片文字和图片
+  </view>
+  <view class="fenx-imgwarp"><image class="fenx-img" src='../image/baimaguan.jpg'></image></view>
+</view>

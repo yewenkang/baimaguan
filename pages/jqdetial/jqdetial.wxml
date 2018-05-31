@@ -1,0 +1,9 @@
+<!--pages/jqdetial/jqdetial.wxml-->
+<view class='page'>
+  <view class="page__bd">
+    <view class='title'>{{title}}</view>
+    <block  wx:for="{{menudata.imgUrls}}" wx:key='key'>
+      <image src="{{item.imgpath}}" class='images'></image>
+    </block>
+  </view>
+</view>

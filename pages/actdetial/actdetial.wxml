@@ -1,0 +1,74 @@
+<!--pages/actdetial/actdetial.wxml-->
+<view class='page'>
+  <view class="page__bd">
+    <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg' class='headimg'>
+      <!-- <view class='imgtext'>每天800步，健康快乐</view> -->
+    </image>
+    <view class='info'>
+      <view class='infotab'>
+        <view class='infodata'>{{data.targetSteps}}步</view>
+        <view class='infoint'>每日达标</view>
+      </view>
+      <view class='infotab'>
+        <view class='infodata'>{{data.totalDay}}天</view>
+        <view class='infoint'>{{data.startDate}}-{{data.endDate}}</view>
+      </view>
+      <view class='infotab'>
+        <view class='infodata'>{{data.laveDay}}天</view>
+        <view class='infoint'>距结束</view>
+      </view>
+    </view>
+    <view class="weui-tab">
+      <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                  <view class="weui-navbar__title">{{item}}</view>
+              </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+          <!--累计步数-->
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <view class='list' wx:for='{{data.stepRanking}}' wx:key='{{index}}'>
+              <view class='listmingci' wx:if='{{index == 0}}'><image src='../image/01.png' class="paim"></image></view>
+              <view class='listmingci' wx:elif='{{index == 1}}'><image src='../image/02.png' class="paim"></image></view>
+              <view class='listmingci' wx:elif='{{index == 2}}'><image src='../image/03.png' class="paim"></image></view>
+              <view class='listmingci'wx:else>{{index+1}}</view>
+              <view class='listhead'>
+                <image class='listimg' src='{{item.head_url}}'></image>
+              </view>
+              <view class='listname'>{{item.nick_name}}</view>
+              <view class='listlast'>{{item.step_count}}步</view>
+            </view>
+          </view>
+          <!--达标天数-->
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <view class='list' wx:for='{{data.dayRanking}}' wx:key='{{index}}'>
+              <view class='listmingci' wx:if='{{index == 0}}'><image src='../image/01.png' class="paim"></image></view>
+              <view class='listmingci' wx:elif='{{index == 1}}'><image src='../image/02.png' class="paim"></image></view>
+              <view class='listmingci' wx:elif='{{index == 2}}'><image src='../image/03.png' class="paim"></image></view>
+              <view class='listmingci'wx:else>{{index+1}}</view>
+              <view class='listhead'>
+                <image class='listimg' src='{{item.head_url}}'></image>
+              </view>
+              <view class='listname'>{{item.nick_name}}</view>
+              <view class='listlast'>{{item.total_finish_day}}天</view>
+            </view>
+          </view>
+          <!--每日步数-->
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <view class='list' wx:for='{{meiri}}' wx:key='{{index}}'>
+              <view class='listdate'>{{item.createDate}}</view>
+              <view class='liststep'>{{item.step}}步</view>
+              <view class='listlast' wx:if='{{item.status == false}}'>未达标</view>
+              <view class='listlast' wx:if='{{item.status == true}}'>达标</view>
+            </view>
+          </view>
+      </view>
+    </view>
+    <view class='baoming' bindtap='baoming' wx:if='{{isDo == true}}'>报名</view>
+    <view class='baomingend' wx:if='{{isDo == false}}'>已报名</view>
+    <view class='baomingend' wx:if='{{isDo == 3}}'>已结束</view> 
+  </view>
+</view>

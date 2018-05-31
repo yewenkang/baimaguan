@@ -1,0 +1,10 @@
+<!--pages/sugline/sugline.wxml-->
+<view class='page'>
+  <view class="page__bd">
+    <image src='https://www.snaildocs.com/base/video/xianlu01.jpg' data-src="https://www.snaildocs.com/base/video/xianlu01.jpg" bindtap="previewImage"></image>
+    <image src='https://www.snaildocs.com/base/video/xianlu02.jpg' data-src="https://www.snaildocs.com/base/video/xianlu02.jpg" bindtap="previewImage"></image>
+    <view class='juli'>
+      当前距离白马关景区{{juli}}km
+    </view>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+/* pages/userfx/userfx.wxss */
+.fenxiang-warp{
+  padding: 10px;
+}
+.fenxiang-title{
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 22px;
+}
+.fenxiang-ms{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.fenxiang-md{
+  display:block;
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+  flex:1;
+  text-align:center;
+  padding: 0 6px;
+  font-size: 14px;
+}
+.fenx-text{
+  line-height: 22px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.fenx-imgwarp{
+  text-align: center;
+}
+.fenx-img{
+  display: block;
+  width: 100%;
+}

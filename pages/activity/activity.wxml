@@ -1,0 +1,64 @@
+<!--pages/activity/activity.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}'>
+  <block wx:for="{{menudata.imgUrls}}" wx:key='key'>
+    <swiper-item>
+      <navigator class='adpath' url='{{item.url}}'>
+      <image src="{{item.imgpath}}" class="slide-image" width="355" height=""/>
+      <text class='adtext'>{{item.title}}</text>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <!--活动大厅-->
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <block wx:for='{{actList}}' wx:key='{{index}}'>
+                    <navigator url="../actdetial/actdetial?actId={{item.id}}">
+                      <view class='listcon'>
+                        <view class='listinfo'>
+                          <view class='listtitle'>{{item.name}}</view>
+                          <view class='listdate'>{{item.startDate}}-{{item.endDate}}</view>
+                          
+                          <view wx:if='{{item.status == 1}}' class='liststar' >{{item.statusName}}</view>
+                          <view wx:if='{{item.status == 2}}' class='listend' >{{item.statusName}}</view>
+                        </view>
+                        <image class='listimage' wx:if='{{item.imgUrlList[0] != null}}' src='{{item.imgUrlList[0]}}'></image>
+                        <image class='listimage' wx:if='{{item.imgUrlList[0] == null}}' src='https://www.snaildocs.com/base/video/moren3.png'></image>
+                      </view>
+                    </navigator>
+                  </block>
+                </view>
+                <!--我的活动-->
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <view class='noneact' style="height:{{winHeight*2-500}}rpx;line-height:{{winHeight*2-500}}rpx" wx:if='{{mystate == 1}}'>还没报名任何活动</view>
+                  <block wx:for='{{myArray}}' wx:key='{{index}}' wx:if='{{mystate == 2}}'>
+                    <navigator url="../actdetial/actdetial?actId={{item.id}}">
+                      <view class='listcon'>
+                        <view class='listinfo'>
+                          <view class='listtitle'>{{item.name}}</view>
+                          <view class='listdate'>{{item.startDate}}-{{item.endDate}}</view>
+                          
+                          <view wx:if='{{item.status == 1}}' class='liststar' >{{item.statusName}}</view>
+                          <view wx:if='{{item.status == 2}}' class='listend' >{{item.statusName}}</view>
+                        </view>
+                        <image class='listimage' wx:if='{{item.imgUrlList[0] != null}}' src='{{item.imgUrlList[0]}}'></image>
+                        <image class='listimage' wx:if='{{item.imgUrlList[0] == null}}' src='https://www.snaildocs.com/base/video/moren3.png'></image>
+                      </view>
+                    </navigator>
+                  </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

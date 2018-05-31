@@ -1,0 +1,100 @@
+<!--pages/step/step.wxml-->
+<view class="page">
+    <view class="page__bd">
+      <audio src='../music/8868.wav' id='kaishiAudio'></audio>
+      <audio src='../music/8737.wav' id='jieshuAudio'></audio>
+      <view class="weui-tab">
+          <view class="weui-navbar">
+              <block wx:for="{{tabs}}" wx:key="*this">
+                  <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                      <view class="weui-navbar__title">{{item}}</view>
+                  </view>
+              </block>
+              <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+          </view>
+          <view class="weui-tab__panel">
+              <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <view class="guiji">轨迹</view>
+                <view class='bushu'>
+                  <view class='paiming'>
+                    <view class='mingci'>45</view>
+                    <view class='mc'>今日排名</view>
+                  </view>
+                  <image class='bushutu' src='../image/bushutu.png'>
+                    <view class='step'>{{stepnum}}</view>
+                    <view class='jiayou'>今日步数</view>
+                  </image>
+                  <view class='totalbushu'>
+                    <view class='mingci'>45</view>
+                    <view class='mc'>总步数</view>
+                  </view>
+                </view>
+               
+               <view class="canvas">
+                <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+               </view>
+                
+               
+
+                <view class='go'>
+                  <map 
+                    class = 'map'
+                    scale = '18'
+                    longitude = "{{location.longitude}}"
+                    latitude = "{{location.latitude}}" 
+                    polyline = "{{polyline}}"
+                    controls='{{controls}}'
+                    bindcontroltap="jieshu"
+                    circles='{{circles}}'
+                    show-location
+                  ></map>
+                </view>
+              </view>
+              <view class="weui-tab__content" hidden="{{activeIndex != 1}}" style='height:calc(100% - 20rpx)'>
+              <block wx:for="{{achievementList}}" wx:key="*this">
+                <navigator url='../jqdetial/jqdetial?title=落凤坡'>
+                  <view class='jdlist'>
+                    <image class='jdimg' wx:if='{{item.url[0] != null}}' src='{{item.url[0]}}'></image>
+                    <image class='jdimg' wx:if='{{item.url[0] == null}}' src='https://www.snaildocs.com/base/video/moren3.png'></image>
+                    <view class='jdmain'>
+                      <view class='jdtitle'>{{item.name}}</view>
+                      <view class='jdpf'>排名：第{{item.rank}}名</view>
+                      <view class='jdjs'>总步数：{{item.step}}步</view>
+                    </view>
+                  </view>
+                </navigator>
+                </block>
+              </view>
+              <view class="weui-tab__content" hidden="{{activeIndex != 2}}" style='height:calc(100% - 20rpx)'>
+                <navigator url='../userfx/userfx?id=1'>
+                <view class='fenx-wapr'>
+                    <view class='fenx-title'>2018-05-16</view>
+                    <view class='fenx-centen'>分享内容内容内容</view>
+                </view>
+                </navigator>
+                <navigator url='../userfx/userfx?id=2'>
+                 <view class='fenx-wapr'>
+                    <view class='fenx-title'>2018-05-16</view>
+                    <view class='fenx-centen'>分享内容内容内容</view>
+                </view>
+                </navigator>
+              </view>
+              <view class="weui-tab__content" hidden="{{activeIndex != 3}}" style='height:calc(100% - 20rpx)'>
+                <navigator url='../userxxi/userxxi?id=3'>
+                <view class='xiaoxi-wapr'>
+                    <view class='xi-title'>消息标题<view class="xi-data">2018-05-16</view></view>
+                    <view class='xi-centen'>后台发送消息可群发，可发给某些人</view>
+                </view>
+                </navigator>
+                <navigator url='../userxxi/userxxi?id=4'>
+                <view class='xiaoxi-wapr'>
+                    <view class='xi-title'>消息标题<view class="xi-data">2018-05-16</view></view>
+                    <view class='xi-centen'>后台发送消息可群发，可发给某些人</view>
+                </view>
+                </navigator>
+              </view>
+          </view>
+      </view>
+      
+    </view>
+</view>

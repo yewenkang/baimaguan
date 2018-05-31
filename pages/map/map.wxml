@@ -1,0 +1,14 @@
+<!--pages/map/map.wxml-->
+<view class='page'>
+  <view class="page__bd">
+  <map
+    class = 'map'
+    scale = '14'
+    longitude = "104.470481"
+    latitude = "31.2804"
+    markers='{{markers}}'
+    circles='{{circles}}'
+    show-location
+  ></map>
+  </view>
+</view>

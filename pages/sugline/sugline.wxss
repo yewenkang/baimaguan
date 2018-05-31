@@ -1,0 +1,26 @@
+/* pages/sugline/sugline.wxss */
+page,
+.page,
+.page__bd{
+    height: 100%;
+    text-align: center
+}
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+image{
+  display: inline-block;
+}
+.juli{
+  width: 100%;
+  background: #26B8F2;
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  padding: 6px;
+  position: fixed;
+  bottom: 0;
+}

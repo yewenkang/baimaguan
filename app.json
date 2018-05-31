@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/dynamic/dynamic",
+    "pages/my/my",
+    "pages/activity/activity",
+    "pages/actdetial/actdetial",
+    "pages/jqdetial/jqdetial",
+    "pages/sugline/sugline",
+    "pages/map/map",
+    "pages/userfx/userfx",
+    "pages/userxxi/userxxi",
+    "pages/fexform/fexform",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#26B8F2",
+    "navigationBarTitleText": "过关点将健步走",
+    "navigationBarTextStyle": "#A8E3FA"
+  },
+  "networkTimeout":{
+    "request":5000
+  },
+  "tabBar": {
+    "selectedColor":"#26B8F2",
+    "list": [
+      {
+        "pagePath": "pages/dynamic/dynamic",
+        "text": "动态",
+        "iconPath": "pages/image/Dynamic.png",
+        "selectedIconPath": "pages/image/Dynamic-blue.png"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "活动",
+        "iconPath": "pages/image/activity.png",
+        "selectedIconPath": "pages/image/activity-blue.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "pages/image/uesr.png",
+        "selectedIconPath": "pages/image/uesr-blue.png"
+      }
+      
+
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+/* pages/jqdetial/jqdetial.wxss */
+page{
+  background: #ffffff;
+}
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.title{
+  height: 100rpx;
+  width: 750rpx;
+  font-size: 52rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+.images{
+  height: 500rpx;
+  width: 710rpx;
+  padding: 10rpx 20rpx;
+  display: block;
+}

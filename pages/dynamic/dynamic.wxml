@@ -1,0 +1,165 @@
+<!--pages/dynamic/dynamic.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+
+             <!--途友分享-->
+            <view class="weui-tab__panel">
+               
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <swiper indicator-dots="{{indicatorDots}}"autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}'>
+                    <block wx:for="{{menudata.imgUrls}}" wx:key='key'>
+                      <swiper-item>
+                        <navigator class='adpath' url='{{item.url}}'>
+                        <image src="{{item.imgpath}}" class="slide-image" width="355" height=""/>
+                        <text class='adtext'>{{item.title}}</text>
+                        </navigator>
+                      </swiper-item>
+                    </block>
+                  </swiper>
+
+                  <view class="fe-btn"><navigator url='../fexform/fexform'>分享</navigator></view>
+                  
+                  <view class='listcon'>
+                    <view class='listmain'>
+                      <image class='listimage' src='https://wx.qlogo.cn/mmopen/vi_32/tqO6pa7XicllHic3qbywzicbXEgl5PgJicRX3B4mU8MQjCUuyiaUNkWEoZCDtYiciaEsbwRFZSIPJL9Id17CwcsWLpfyg/132'></image>
+                      <view class='listinfo'>昵称</view>
+                      <view class="listdata">2018-05-02</view>
+                    </view>
+                    <view class='infomain'>敢吃干跑，挑战每日8000步，敢来就有礼！敢吃干跑，挑战每日8000步</view>
+                    <view class="listdesimg">
+                      <view class="listdesleft">
+                        <view class="listdesmin">
+                          <image class="desimage" src='../image/huodong.png'></image>
+                        </view>
+                      </view>
+                      <view class="listdesleft">
+                        <view class="listdesmin">
+                          <image class="desimage" src='../image/huodong.png'></image>
+                        </view>
+                      </view>
+                      <view class="listdesleft">
+                        <view class="listdesmin">
+                          <image class="desimage" src='../image/huodong.png'></image>
+                        </view>
+                      </view>
+                    </view>
+                    <view class='infobottom'>
+                      <view class='bottommain'><image src='../image/zan.png' class="dzimg"></image><text class="dptext">11</text></view>
+                      <view class='bottommain'><image src='../image/xiaoxin.png' class="plimg"></image><text class="dptext">12</text></view>
+                    </view>
+                  </view>
+
+                  <view class='listcon'>
+                    <view class='listmain'>
+                      <image class='listimage' src='https://wx.qlogo.cn/mmopen/vi_32/tqO6pa7XicllHic3qbywzicbXEgl5PgJicRX3B4mU8MQjCUuyiaUNkWEoZCDtYiciaEsbwRFZSIPJL9Id17CwcsWLpfyg/132'></image>
+                      <view class='listinfo'>昵称</view>
+                      <view class="listdata">2018-05-02</view>
+                    </view>
+                    <view class='infomain'>敢吃干跑，挑战每日8000步，敢来就有礼！敢吃干跑，挑战每日8000步</view>
+                    <view class="listdesimg">
+                      <view class="listdesleft">
+                        <view class="listdesmin">
+                          <image class="desimage" src='../image/huodong.png'></image>
+                        </view>
+                      </view>
+                      <view class="listdesleft">
+                        <view class="listdesmin">
+                          <image class="desimage" src='../image/huodong.png'></image>
+                        </view>
+                      </view>
+                      <view class="listdesleft">
+                        <view class="listdesmin">
+                          <image class="desimage" src='../image/huodong.png'></image>
+                        </view>
+                      </view>
+                    </view>
+                    <view class='infobottom'>
+                      <view class='bottommain'><image src='../image/zan.png' class="dzimg"></image><text class="dptext">11</text></view>
+                      <view class='bottommain'><image src='../image/xiaoxin.png' class="plimg"></image><text class="dptext">12</text></view>
+                    </view>
+                  </view>
+
+                </view>
+                
+
+                <!--赛制公告-->
+                <view class="weui-tab__content" style='height:calc(100% - 15rpx);background:#ffffff;' hidden="{{activeIndex != 1}}">
+                  <image class='ggimg' src='../image/baimaguan.jpg'></image>
+                  <view class='kftitle'>活动规则</view>
+                  <view class='guize'>
+                    <view class='guizelist'>1）先进入活动，成功参加活动才可以开始计步。</view>
+                    <view class='guizelist'>2）点击开始步数，者开始进行计算步数。</view>
+                    <view class='guizelist'>3）步数计算范围必须在景区内有效。</view>
+                    <view class='guizelist'>4）步数计算存在延迟前往微信运动手动更新下步数。</view>
+                    <view class='guizelist'>5）即将离开出景区时，点击结束。步数成绩有效。</view>
+                    <view class='jieshi'>注：本活动最终解释权归白马关景区办公室所有</view>
+                  </view>
+                </view>
+                <!--景区介绍-->
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                  <navigator url='../jqdetial/jqdetial?title=庞统墓祠'>
+                    <view class='jdlist'>
+                      <image class='jdimg' src='../image/huodong.png'></image>
+                      <view class='jdmain'>
+                        <view class='jdtitle'>庞统祠墓</view>
+                        <view class='jdpf'>4.8分</view>
+                        <view class='jdjs'>庞统祠墓座落在白马雄关之巅，掩映在森森翠柏之中。它是四川最早、保存最为完整的一处三国蜀汉遗迹，不仅是三国蜀汉政权兴亡的见证地</view>
+                      </view>
+                    </view>
+                  </navigator>
+                  <navigator url='../jqdetial/jqdetial?title=落凤坡'>
+                    <view class='jdlist'>
+                      <image class='jdimg' src='../image/huodong.png'></image>
+                      <view class='jdmain'>
+                        <view class='jdtitle'>落凤坡</view>
+                        <view class='jdpf'>4.6分</view>
+                        <view class='jdjs'>北出关楼，沿古驿道北行1公里后，来到了落凤坡，《三国演义》中说这是庞统被伏中箭阵亡的地方。罗贯中生动的刻画了当时的情景：“庞统惊曰：‘吾道号凤雏，此处名落凤坡，不利于吾，令后军疾退’。</view>
+                      </view>
+                    </view>
+                  </navigator>
+                </view>
+                <!--联系客服-->
+                <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                  <image class='kfimg' src='../image/baimaguan.jpg'></image>
+                  <view class='kftitle'>白马关景区客服部</view>
+                  <view class='kfinfo'>
+                    <view class='kfadd'>
+                      <navigator class='addview' url='../map/map'>
+                        <image class='addlogo' src='../image/add.png'></image>
+                      </navigator>
+                      <view class='addinfo'>四川省德阳市罗江区G93成渝环线高速</view>
+                      <view class='phoneview' bindtap='phone'>
+                        <image class='phone' src='../image/phone.png'></image>
+                      </view>
+                    </view>
+                  </view>
+                  <view class='jsinfo'>
+                    <view class='jstitle'>景 区 介 绍</view>
+                    <view class='kfsj'>
+                      <image class='clock' src='../image/clock.png'></image>
+                      <view class='sjinfo'>09:00-20:30营业</view>
+                    </view>
+                    <view class='jsmain'>
+                      <view class='jstext'>白马关景区隶属四川省德阳市罗江区，地处成德绵经济圈中心地带，南距德阳市区15公里，北抵绵阳27公里，距罗江城区4公里,宝成铁路、川陕公路（108国道）、成绵高速公路、成绵乐铁路客运专线横穿全境。</view>
+                      <view class='kfphone'>
+                        <text>联系方式:</text>
+                        <text>王林：18888888888 (微信同步)</text>
+                        <text>叶子：18888888888 (微信同步)</text>
+                        <text>俊杰：18888888888 (微信同步)</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
